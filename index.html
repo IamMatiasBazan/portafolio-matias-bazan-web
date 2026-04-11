@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matías Bazán | Desarrollador Frontend</title>
+
+    <!-- ================= SEO ================= -->
+    <meta name="description"
+        content="Portafolio de Matías Bazán, Desarrollador Frontend enfocado en crear experiencias web eficientes y escalables.">
+    <meta name="keywords" content="Frontend, Desarrollador, Web, Portfolio, Matías Bazán, HTML, CSS, JavaScript">
+    <meta name="author" content="Matías Bazán">
+
+    <!-- ================= OPEN GRAPH ================= -->
+    <meta property="og:title" content="Matías Bazán | Desarrollador Frontend">
+    <meta property="og:description"
+        content="Construyo interfaces modernas, optimizadas y pensadas para entornos reales de producción.">
+    <meta property="og:image" content="img/portada/portada-desktop.webp">
+    <meta property="og:type" content="website">
+
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- ================= FONTS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ================= ESTILOS CSS ================= -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ================= PORTADA (HERO) ================= -->
+    <header class="hero" id="home">
+        <!-- Efecto Matrix -->
+        <canvas id="matrix-canvas"></canvas>
+
+        <div class="hero__container">
+            <!-- Contenido (Sobre el fondo) -->
+            <div class="hero__content">
+                <div class="hero__logo-box">
+                    <img src="img/logo/logo-desktop.svg" alt="Logo Matías Bazán" class="hero__logo">
+                </div>
+
+                <h1 class="hero__title">
+                    Desarrollador Frontend <br>
+                    enfocado en crear experiencias <br>
+                    <span class="text-gradient">web eficientes y escalables</span>
+                </h1>
+
+                <p class="hero__description">
+                    Construyo interfaces modernas, optimizadas y pensadas para entornos reales de producción.
+                </p>
+
+                <div class="hero__tags">
+                    <span class="tag">Código limpio</span>
+                    <span class="tag">Buenas prácticas</span>
+                    <span class="tag">Trabajo en equipo</span>
+                </div>
+
+                <div class="hero__actions">
+                    <a href="#proyectos" class="btn-primary" id="btn-projects">
+                        Ver proyectos
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    
+    <!-- ================= BANDA DE TECNOLOGÍAS ================= -->
+    <div class="tech-band">
+        <div class="tech-band__track">
+            <!-- Primer grupo de items -->
+            <div class="tech-item">
+                <img src="img/banda-animada/flutter.svg" alt="Flutter">
+                <span>Flutter</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/html.svg" alt="HTML">
+                <span>HTML</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/css.svg" alt="CSS">
+                <span>CSS</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/dart.png" alt="Dart">
+                <span>Dart</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/photoshop.svg" alt="Photoshop">
+                <span>Photoshop</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/figma.svg" alt="Figma">
+                <span>Figma</span>
+            </div>
+            <!-- Duplicado para loop infinito -->
+            <div class="tech-item">
+                <img src="img/banda-animada/flutter.svg" alt="Flutter">
+                <span>Flutter</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/html.svg" alt="HTML">
+                <span>HTML</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/css.svg" alt="CSS">
+                <span>CSS</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/dart.png" alt="Dart">
+                <span>Dart</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/photoshop.svg" alt="Photoshop">
+                <span>Photoshop</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/figma.svg" alt="Figma">
+                <span>Figma</span>
+            </div>
+            <!-- Triplicado para mayor seguridad en pantallas ultra anchas -->
+            <div class="tech-item">
+                <img src="img/banda-animada/flutter.svg" alt="Flutter">
+                <span>Flutter</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/html.svg" alt="HTML">
+                <span>HTML</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/css.svg" alt="CSS">
+                <span>CSS</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/dart.png" alt="Dart">
+                <span>Dart</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/photoshop.svg" alt="Photoshop">
+                <span>Photoshop</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/figma.svg" alt="Figma">
+                <span>Figma</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Guía horizontal separadora -->
+        <div class="guide-h"></div>
+
+        <!-- SECCIÓN SOBRE MÍ CON EFECTO AR -->
+        <section class="about container" id="sobre-mi">
+            <div class="about__grid">
+                <!-- Columna Izquierda: Texto -->
+                <div class="about__content">
+                    <div class="glass-card">
+                        <h2 class="hero__title" style="font-size: 2rem; margin-bottom: 20px;">
+                            Sobre <span class="text-gradient">mí</span>
+                        </h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px;">
+                            Soy un apasionado por la tecnología y el diseño limpio. Mi enfoque se centra en crear 
+                            interfaces que no solo se vean bien, sino que funcionen con la precisión de un sistema de 
+                            realidad aumentada.
+                        </p>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">
+                            Abordo cada proyecto con un compromiso total con la escalabilidad y las mejores prácticas 
+                            de la industria.
+                        </p>
+                        <!-- Guía vertical decorativa -->
+                        <div style="margin-top: 30px;">
+                            <div class="guide-v"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Gafas AR -->
+                <div class="ar-glasses">
+                    <img src="img/sobre-mi/matias-bazan-sobre-mi.webp" alt="Matías Bazán AR" class="ar-glasses__base">
+                    
+                    <div class="ar-visor">
+                        <div class="ar-visor__track">
+                            <img src="img/sobre-mi/dumbledore.webp" alt="Proyecto Dumbledore">
+                            <img src="img/sobre-mi/mario-bros.webp" alt="Proyecto Mario Bros">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Futuras secciones del portafolio -->
+    </main>
+
+    <script src="js/matrix.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

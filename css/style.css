@@ -1,0 +1,480 @@
+/* ==========================================================================
+   DISEÑO DE PORTAFOLIO - MATÍAS BAZÁN
+   ========================================================================== */
+
+/* 1. VARIABLES Y TOKENS */
+:root {
+    /* Colores */
+    --bg-color: #020617;
+    --primary: #0C4CF3;
+    --primary-light: #60a5fa;
+    --accent: #22d3ee;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --white: #ffffff;
+
+    /* Fuentes */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    /* Espaciado */
+    --section-padding: 80px 20px;
+    --container-width: 1200px;
+
+    /* Transiciones */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. RESET Y ESTILOS BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image:
+        linear-gradient(to right, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    /* Cuadrícula de 40px igual a Nuxon */
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 3. UTILIDADES */
+.guide-h {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.3), transparent);
+    position: relative;
+    margin: 40px 0;
+}
+
+.guide-v {
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.3), transparent);
+    display: inline-block;
+}
+
+.glass-card {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(34, 211, 238, 0.12);
+    border-radius: 16px;
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.glass-card:hover {
+    border-color: rgba(34, 211, 238, 0.3);
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--white) 0%, var(--primary-light) 50%, var(--white) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. HERO SECTION */
+.hero {
+    width: 100%;
+    max-width: 1920px;
+    height: 750px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(0deg, var(--bg-color) 0%, transparent 20%),
+        linear-gradient(90deg, var(--bg-color) 0%, rgba(2, 6, 23, 0.45) 60%, transparent 100%),
+        url('../img/portada/portada-desktop.webp') no-repeat center right;
+    background-size: cover;
+}
+
+/* Animación de entrada para el contenido */
+.hero__content>* {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero__content> :nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hero__content> :nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero__content> :nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hero__content> :nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.hero__content> :nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+    /* Sutil para no distraer */
+}
+
+.hero__container {
+    width: 100%;
+    max-width: var(--container-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    /* Asegura que el texto esté sobre el canvas */
+}
+
+.hero__content {
+    max-width: 650px;
+    /* Asegura que el texto no se extienda sobre el portal de la derecha */
+}
+
+/* Contenido Izquierda */
+.hero__logo-box {
+    margin-bottom: 24px;
+}
+
+.hero__logo {
+    transition: var(--transition);
+}
+
+.hero__logo:hover {
+    transform: scale(1.05);
+}
+
+.hero__title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.hero__description {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 540px;
+    margin-bottom: 24px;
+}
+
+.hero__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.tag {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+    backdrop-filter: blur(4px);
+}
+
+.tag:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+.btn-primary {
+    width: 469px;
+    height: 55px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 4px 0px 0px #00227B;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: #0C4CF3;
+    transform: translateY(-3px);
+    box-shadow: none;
+}
+
+/* 5. BANDA DE TECNOLOGÍAS (MARQUEE) */
+.tech-band {
+    width: 100%;
+    background: #051139;
+    padding: 24px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10;
+}
+
+.tech-band__track {
+    display: flex;
+    width: max-content;
+    animation: scroll 50s linear infinite;
+}
+
+.tech-band:hover .tech-band__track {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 60px;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.tech-item img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 6. SECCIÓN SOBRE MÍ CON EFECTO AR */
+.about {
+    padding: var(--section-padding);
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about__content {
+    max-width: 650px;
+}
+
+/* Contenedor de las Gafas */
+.ar-glasses {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 30px rgba(12, 76, 243, 0.2));
+}
+
+.ar-glasses__base {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* Visor (Pantalla dentro de las gafas) */
+.ar-visor {
+    position: absolute;
+    top: -10%;
+    left: 10%;
+    width: 55%;
+    height: 100%;
+    z-index: 3;
+    /* Clip-path preciso basado en coordenadas reales de la imagen */
+    clip-path: polygon(23% 33%, 77% 33%,
+            82% 38%, 82% 50%, 77% 55%,
+            58% 55%, 50% 45%, 42% 55%,
+            23% 55%, 18% 50%, 18% 38%);
+    overflow: hidden;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    background: rgba(0, 0, 0, 0.3);
+    /* Fondo para cuando la imagen es 'contain' */
+    opacity: 1;
+    cursor: default;
+}
+
+/* Resplandor del Visor */
+.ar-visor::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(34, 211, 238, 0.3) 100%);
+    box-shadow: inset 0 0 40px rgba(34, 211, 238, 0.6);
+    z-index: 5;
+    border-radius: 50px;
+    /* Para suavizar el resplandor */
+}
+
+.ar-visor__track {
+    display: flex;
+    height: 100%;
+    width: 200%;
+    animation: arSlide 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.ar-visor__track img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    /* Cambiado a contain para que la imagen no se vea 'gigante' */
+    padding: 15px;
+    /* Espaciado interno para que respire dentro del lente */
+    object-position: center;
+    filter: brightness(1.1) contrast(1.2);
+}
+
+@keyframes arSlide {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    45%,
+    65% {
+        transform: translateX(-50%);
+    }
+
+    90%,
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 7. RESPONSIVIDAD */
+@media (max-width: 1024px) {
+    .hero {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .hero__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero__description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero__tags {
+        justify-content: center;
+    }
+
+    .hero__image-wrapper {
+        max-width: 400px;
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about__content {
+        order: 1;
+    }
+
+    .ar-glasses {
+        order: 2;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__description {
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
