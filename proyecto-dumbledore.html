@@ -25,6 +25,14 @@
             margin-bottom: 40px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease, box-shadow 0.5s ease;
+            filter: brightness(0.65) saturate(0.8);
+        }
+
+        .project-image-large:hover {
+            filter: brightness(1.1) saturate(1.1) contrast(1.05);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 30px 60px rgba(12, 76, 243, 0.3);
         }
 
         .back-link {
@@ -122,7 +130,8 @@
     </header>
 
     <main class="details-container">
-        <img src="img/trabajos/proyecto-dumbledore.webp" alt="Albus Dumbledore Project" class="project-image-large">
+        <img src="img/trabajos/dumbledore-pagina-detalles.JPG" alt="Albus Dumbledore Project"
+            class="project-image-large">
 
         <div class="project-info-grid">
             <div class="project-content">
@@ -134,7 +143,6 @@
 
                 <h2>Características clave</h2>
                 <ul>
-                    <li>Efectos de resplandor (glow) dinámicos.</li>
                     <li>Navegación fluida inspirada en elementos de fantasía.</li>
                     <li>Paleta de colores curada para transmitir misticismo.</li>
                     <li>Optimización de imágenes WebP para carga ultra rápida.</li>
@@ -148,12 +156,12 @@
 
             <aside class="project-sidebar">
                 <div class="sidebar-item">
-                    <span class="sidebar-label">Cliente / Tipo</span>
-                    <span class="sidebar-value">Diseño de Concepto</span>
+                    <span class="sidebar-label">Tipo</span>
+                    <span class="sidebar-value">Proyecto Personal</span>
                 </div>
                 <div class="sidebar-item">
                     <span class="sidebar-label">Fecha</span>
-                    <span class="sidebar-value">Marzo 2024</span>
+                    <span class="sidebar-value">Agosto 2025</span>
                 </div>
                 <div class="sidebar-item">
                     <span class="sidebar-label">Tecnologías</span>
@@ -162,11 +170,17 @@
                         <span class="tech-pill">CSS3</span>
                         <span class="tech-pill">JavaScript</span>
                         <span class="tech-pill">Figma</span>
+                        <span class="tech-pill">Photoshop</span>
+                        <span class="tech-pill">Vercel</span>
                     </div>
                 </div>
-                <div class="hero__actions" style="margin-top: 20px;">
-                    <a href="https://proyecto-dumbledore-web.vercel.app/" class="btn-primary"
-                        style="width: 100%; height: 50px;">Ver en Vivo</a>
+                <div class="hero__actions" style="margin-top: 20px; display: flex; gap: 10px;">
+                    <a href="https://proyecto-dumbledore-web.vercel.app/" target="_blank" class="btn-icon" title="Ver Sitio Web" style="width: 50px; height: 50px; flex-shrink: 0;">
+                        <img src="img/banda-animada/website.svg" alt="Sitio Web" style="width: 24px;">
+                    </a>
+                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon" title="Ver código en GitHub" style="width: 50px; height: 50px; flex-shrink: 0;">
+                        <img src="img/banda-animada/github.svg" alt="GitHub" style="width: 24px;">
+                    </a>
                 </div>
             </aside>
         </div>

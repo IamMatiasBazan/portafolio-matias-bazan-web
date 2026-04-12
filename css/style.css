@@ -120,10 +120,36 @@ a {
     align-items: center;
     position: relative;
     overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(0deg, var(--bg-color) 0%, transparent 20%),
         linear-gradient(90deg, var(--bg-color) 0%, rgba(2, 6, 23, 0.45) 60%, transparent 100%),
         url('../img/portada/portada-desktop.webp') no-repeat center right;
     background-size: cover;
+    z-index: 0;
+    filter: brightness(1) saturate(1);
+    transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__hover-trigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+}
+
+.hero:has(.hero__hover-trigger:hover)::before {
+    filter: brightness(1.2) saturate(1.1) contrast(1.1);
 }
 
 /* Animación de entrada para el contenido */
@@ -182,12 +208,12 @@ a {
     align-items: center;
     position: relative;
     z-index: 5;
-    /* Asegura que el texto esté sobre el canvas */
+    pointer-events: none;
 }
 
 .hero__content {
     max-width: 650px;
-    /* Asegura que el texto no se extienda sobre el portal de la derecha */
+    pointer-events: auto;
 }
 
 /* Contenido Izquierda */
@@ -502,6 +528,10 @@ a {
         background-image: none !important;
     }
 
+    .hero::before {
+        display: none;
+    }
+
     /* Imagen superior sin ningún degradado */
     .hero__mobile-img {
         display: block;
@@ -746,10 +776,14 @@ a {
     inset: 0;
     background: linear-gradient(to top, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.4) 60%, transparent 100%);
     display: flex;
-    flex-direction: row; /* Horizontal layout */
-    justify-content: space-between; /* Content left, button right */
-    align-items: flex-end; /* Bottom align so button is at the same height as icons */
-    padding: 30px 40px; /* Padding for the sides and bottom */
+    flex-direction: row;
+    /* Horizontal layout */
+    justify-content: space-between;
+    /* Content left, button right */
+    align-items: flex-end;
+    /* Bottom align so button is at the same height as icons */
+    padding: 30px 40px;
+    /* Padding for the sides and bottom */
     opacity: 0;
     transition: var(--transition);
     backdrop-filter: blur(0px);
@@ -847,7 +881,8 @@ a {
     }
 
     .personal-card__overlay {
-        opacity: 1; /* Always visible on mobile */
+        opacity: 1;
+        /* Always visible on mobile */
         padding: 0 20px;
         background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, transparent 100%);
     }
@@ -861,8 +896,5 @@ a {
         padding: 8px 16px;
         font-size: 0.75rem;
         transform: none;
-    }
-}
-  transform: none;
     }
 }
