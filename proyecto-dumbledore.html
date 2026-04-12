@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albus Dumbledore | Matías Bazán</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .details-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(12, 76, 243, 0.1) 0%, transparent 100%);
+        }
+
+        .details-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .project-image-large {
+            width: 100%;
+            border-radius: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-light);
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--white);
+            transform: translateX(-5px);
+        }
+
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .project-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-title-large {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .project-content h2 {
+            font-family: var(--font-heading);
+            margin: 30px 0 15px;
+            color: var(--primary-light);
+        }
+
+        .project-sidebar {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: fit-content;
+        }
+
+        .sidebar-item {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .sidebar-value {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="details-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+            <h1 class="project-title-large">Albus Dumbledore</h1>
+            <p class="hero__description" style="margin: 0 auto;">Exploración visual y conceptual de un personaje icónico
+                aplicada al diseño web interactivo.</p>
+        </div>
+    </header>
+
+    <main class="details-container">
+        <img src="img/trabajos/proyecto-dumbledore.webp" alt="Albus Dumbledore Project" class="project-image-large">
+
+        <div class="project-info-grid">
+            <div class="project-content">
+                <h2>Sobre el Proyecto</h2>
+                <p>Este proyecto personal se centra en la creación de una interfaz inmersiva inspirada en el universo de
+                    Harry Potter, específicamente en el personaje de Albus Dumbledore. El objetivo fue experimentar con
+                    transiciones suaves, efectos de iluminación mágica y una tipografía que evocara la sabiduría y el
+                    misterio.</p>
+
+                <h2>Características clave</h2>
+                <ul>
+                    <li>Efectos de resplandor (glow) dinámicos.</li>
+                    <li>Navegación fluida inspirada en elementos de fantasía.</li>
+                    <li>Paleta de colores curada para transmitir misticismo.</li>
+                    <li>Optimización de imágenes WebP para carga ultra rápida.</li>
+                </ul>
+
+                <h2>Proceso de Desarrollo</h2>
+                <p>Se comenzó con un prototipo en Figma para definir la jerarquía visual. La implementación se realizó
+                    con HTML5 semántico y CSS3 puro, utilizando variables para gestionar la consistencia de los efectos
+                    visuales.</p>
+            </div>
+
+            <aside class="project-sidebar">
+                <div class="sidebar-item">
+                    <span class="sidebar-label">Cliente / Tipo</span>
+                    <span class="sidebar-value">Diseño de Concepto</span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-label">Fecha</span>
+                    <span class="sidebar-value">Marzo 2024</span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-label">Tecnologías</span>
+                    <div class="tech-tags">
+                        <span class="tech-pill">HTML5</span>
+                        <span class="tech-pill">CSS3</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">Figma</span>
+                    </div>
+                </div>
+                <div class="hero__actions" style="margin-top: 20px;">
+                    <a href="https://proyecto-dumbledore-web.vercel.app/" class="btn-primary"
+                        style="width: 100%; height: 50px;">Ver en Vivo</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer style="padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p>&copy; 2026 Matías Bazán - Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

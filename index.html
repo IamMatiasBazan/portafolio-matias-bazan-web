@@ -36,6 +36,11 @@
 <body>
     <!-- ================= PORTADA (HERO) ================= -->
     <header class="hero" id="home">
+        <!-- Imagen para móvil (Se muestra solo en pantallas pequeñas) -->
+        <div class="hero__mobile-img">
+            <img src="img/portada/portada-movil.webp" alt="Matías Bazán Portada Móvil">
+        </div>
+
         <!-- Efecto Matrix -->
         <canvas id="matrix-canvas"></canvas>
 
@@ -43,12 +48,11 @@
             <!-- Contenido (Sobre el fondo) -->
             <div class="hero__content">
                 <div class="hero__logo-box">
-                    <img src="img/logo/logo-desktop.svg" alt="Logo Matías Bazán" class="hero__logo">
+                    <img src="img/logo/logo-desktop.svg" alt="Matías Bazán Logo" class="hero__logo">
                 </div>
 
                 <h1 class="hero__title">
-                    Desarrollador Frontend <br>
-                    enfocado en crear experiencias <br>
+                    Desarrollador Frontend enfocado en crear experiencias
                     <span class="text-gradient">web eficientes y escalables</span>
                 </h1>
 
@@ -71,7 +75,7 @@
 
         </div>
     </header>
-    
+
     <!-- ================= BANDA DE TECNOLOGÍAS ================= -->
     <div class="tech-band">
         <div class="tech-band__track">
@@ -93,12 +97,32 @@
                 <span>Dart</span>
             </div>
             <div class="tech-item">
+                <img src="img/banda-animada/javascript.svg" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/git.svg" alt="Git">
+                <span>Git</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/github.svg" alt="GitHub">
+                <span>GitHub</span>
+            </div>
+            <div class="tech-item">
                 <img src="img/banda-animada/photoshop.svg" alt="Photoshop">
                 <span>Photoshop</span>
             </div>
             <div class="tech-item">
                 <img src="img/banda-animada/figma.svg" alt="Figma">
                 <span>Figma</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/notion.svg" alt="Notion">
+                <span>Notion</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/vercel.svg" alt="Vercel">
+                <span>Vercel</span>
             </div>
             <!-- Duplicado para loop infinito -->
             <div class="tech-item">
@@ -118,12 +142,32 @@
                 <span>Dart</span>
             </div>
             <div class="tech-item">
+                <img src="img/banda-animada/javascript.svg" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/git.svg" alt="Git">
+                <span>Git</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/github.svg" alt="GitHub">
+                <span>GitHub</span>
+            </div>
+            <div class="tech-item">
                 <img src="img/banda-animada/photoshop.svg" alt="Photoshop">
                 <span>Photoshop</span>
             </div>
             <div class="tech-item">
                 <img src="img/banda-animada/figma.svg" alt="Figma">
                 <span>Figma</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/notion.svg" alt="Notion">
+                <span>Notion</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/vercel.svg" alt="Vercel">
+                <span>Vercel</span>
             </div>
             <!-- Triplicado para mayor seguridad en pantallas ultra anchas -->
             <div class="tech-item">
@@ -143,6 +187,18 @@
                 <span>Dart</span>
             </div>
             <div class="tech-item">
+                <img src="img/banda-animada/javascript.svg" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/git.svg" alt="Git">
+                <span>Git</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/github.svg" alt="GitHub">
+                <span>GitHub</span>
+            </div>
+            <div class="tech-item">
                 <img src="img/banda-animada/photoshop.svg" alt="Photoshop">
                 <span>Photoshop</span>
             </div>
@@ -150,57 +206,236 @@
                 <img src="img/banda-animada/figma.svg" alt="Figma">
                 <span>Figma</span>
             </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/notion.svg" alt="Notion">
+                <span>Notion</span>
+            </div>
+            <div class="tech-item">
+                <img src="img/banda-animada/vercel.svg" alt="Vercel">
+                <span>Vercel</span>
+            </div>
         </div>
     </div>
 
     <main>
-        <!-- Guía horizontal separadora -->
-        <div class="guide-h"></div>
+        <!-- SECCIÓN TRABAJOS REALIZADOS -->
+        <section class="projects container" id="proyectos">
+            <div class="projects__header">
+                <h2 class="hero__title">
+                    Trabajos <span class="text-gradient">realizados</span>
+                </h2>
+                <p class="projects__subtitle">
+                    Aplicaciones y soluciones web construidas aplicando buenas prácticas,
+                    enfoque en rendimiento y experiencia de usuario.
+                </p>
+            </div>
 
-        <!-- SECCIÓN SOBRE MÍ CON EFECTO AR -->
-        <section class="about container" id="sobre-mi">
-            <div class="about__grid">
-                <!-- Columna Izquierda: Texto -->
-                <div class="about__content">
-                    <div class="glass-card">
-                        <h2 class="hero__title" style="font-size: 2rem; margin-bottom: 20px;">
-                            Sobre <span class="text-gradient">mí</span>
-                        </h2>
-                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px;">
-                            Soy un apasionado por la tecnología y el diseño limpio. Mi enfoque se centra en crear 
-                            interfaces que no solo se vean bien, sino que funcionen con la precisión de un sistema de 
-                            realidad aumentada.
+            <div class="projects__grid">
+                <!-- Proyecto 1: Plaza Digital -->
+                <div class="project-card">
+                    <div class="project-card__info">
+                        <h3 class="project-card__title">Plaza Digital</h3>
+                        <p class="project-card__description">
+                            Desarrollo de un sistema web orientado a la gestión y organización de información.
                         </p>
-                        <p style="color: var(--text-muted); font-size: 1.1rem;">
-                            Abordo cada proyecto con un compromiso total con la escalabilidad y las mejores prácticas 
-                            de la industria.
-                        </p>
-                        <!-- Guía vertical decorativa -->
-                        <div style="margin-top: 30px;">
-                            <div class="guide-v"></div>
-                        </div>
+                    </div>
+                    <div class="project-card__image">
+                        <img src="img/trabajos/trabajo-plaza-digital.webp" alt="Proyecto Plaza Digital Mockup">
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Columna Derecha: Gafas AR -->
-                <div class="ar-glasses">
-                    <img src="img/sobre-mi/matias-bazan-sobre-mi.webp" alt="Matías Bazán AR" class="ar-glasses__base">
-                    
-                    <div class="ar-visor">
-                        <div class="ar-visor__track">
-                            <img src="img/sobre-mi/dumbledore.webp" alt="Proyecto Dumbledore">
-                            <img src="img/sobre-mi/mario-bros.webp" alt="Proyecto Mario Bros">
+        <!-- SECCIÓN PROYECTOS PERSONALES (INFINITE MARQUEE) -->
+        <section class="personal-projects">
+            <div class="container">
+                <div class="projects__header">
+                    <h2 class="hero__title">
+                        Desarrollo de <span class="text-gradient">proyectos personales</span>
+                    </h2>
+                    <p class="projects__subtitle">
+                        Explora mis creaciones independientes donde experimento con nuevas tecnologías y diseños
+                        disruptivos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="personal-marquee">
+                <div class="personal-marquee__track">
+                    <!-- Proyecto 1: Dumbledore -->
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-dumbledore.webp" alt="Proyecto Dumbledore">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Albus Dumbledore</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/html.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/css.svg" alt="Live">
+                                    </a>
+                                    <a href="proyecto-dumbledore.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-dumbledore.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2: Johnny Depp -->
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-johnny-depp.webp" alt="Proyecto Johnny Depp">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Deep Style</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/html.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/css.svg" alt="Live">
+                                    </a>
+                                    <a href="proyecto-johnny-depp.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-johnny-depp.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3: Mario Bros -->
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-mario-bros.webp" alt="Proyecto Mario Bros">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Super Mario Bros</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/html.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/css.svg" alt="Live">
+                                    </a>
+                                    <a href="proyecto-mario-bros.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-mario-bros.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+                    <!-- Proyecto 4: Portafolio -->
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-portafolio-matias-bazan.webp" alt="Proyecto Portafolio">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Premium Portafolio</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/flutter.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/dart.png" alt="Live">
+                                    </a>
+                                    <a href="proyecto-portafolio.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-portafolio.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+
+                    <!-- Duplicado para loop infinito -->
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-dumbledore.webp" alt="Proyecto Dumbledore">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Albus Dumbledore</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/html.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/css.svg" alt="Live">
+                                    </a>
+                                    <a href="proyecto-dumbledore.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-dumbledore.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-johnny-depp.webp" alt="Proyecto Johnny Depp">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Deep Style</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/html.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/css.svg" alt="Live">
+                                    </a>
+                                    <a href="proyecto-johnny-depp.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-johnny-depp.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-mario-bros.webp" alt="Proyecto Mario Bros">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Super Mario Bros</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/html.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/css.svg" alt="Live">
+                                    </a>
+                                    <a href="proyecto-mario-bros.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-mario-bros.html" class="btn-ver-mas">Ver más →</a>
+                        </div>
+                    </div>
+                    <div class="personal-card">
+                        <img src="img/trabajos/proyecto-portafolio-matias-bazan.webp" alt="Proyecto Portafolio">
+                        <div class="personal-card__overlay">
+                            <div class="personal-card__info-box">
+                                <h3>Premium Portafolio</h3>
+                                <div class="personal-card__buttons">
+                                    <a href="https://github.com/matiasbazan" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/flutter.svg" alt="GitHub">
+                                    </a>
+                                    <a href="index.html" target="_blank" class="btn-icon">
+                                        <img src="img/banda-animada/dart.png" alt="Live">
+                                    </a>
+                                    <a href="proyecto-portafolio.html" class="btn-icon">
+                                        <img src="img/banda-animada/figma.svg" alt="Info">
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="proyecto-portafolio.html" class="btn-ver-mas">Ver más →</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Futuras secciones del portafolio -->
     </main>
 
     <script src="js/matrix.js"></script>
-    <script src="js/main.js"></script>
 </body>
+
 
 </html>

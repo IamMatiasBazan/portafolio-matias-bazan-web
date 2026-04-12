@@ -317,164 +317,552 @@ a {
     }
 }
 
-/* 6. SECCIÓN SOBRE MÍ CON EFECTO AR */
-.about {
+/* 6. SECCIÓN PROYECTOS */
+.projects {
     padding: var(--section-padding);
 }
 
-.about__grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
+.projects__header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.projects__subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 16px auto 0;
+}
+
+.projects__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-card {
+    background: #0C4CF3;
+    display: flex;
     align-items: center;
-}
-
-.about__content {
-    max-width: 650px;
-}
-
-/* Contenedor de las Gafas */
-.ar-glasses {
+    justify-content: space-between;
+    border-radius: 24px;
+    width: 570px;
+    height: 203px;
+    margin: 60px auto;
+    /* Aumentamos margen para el desbordamiento */
+    padding: 0 60px;
+    /* overflow: hidden; -- Eliminado para permitir desbordamiento */
+    transition: var(--transition);
     position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    filter: drop-shadow(0 0 30px rgba(12, 76, 243, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.ar-glasses__base {
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px -12px rgba(12, 76, 243, 0.5);
+}
+
+.project-card__info {
+    flex: 1;
+    max-width: 400px;
     z-index: 2;
 }
 
-/* Visor (Pantalla dentro de las gafas) */
-.ar-visor {
-    position: absolute;
-    top: -10%;
-    left: 10%;
-    width: 55%;
-    height: 100%;
-    z-index: 3;
-    /* Clip-path preciso basado en coordenadas reales de la imagen */
-    clip-path: polygon(23% 33%, 77% 33%,
-            82% 38%, 82% 50%, 77% 55%,
-            58% 55%, 50% 45%, 42% 55%,
-            23% 55%, 18% 50%, 18% 38%);
-    overflow: hidden;
-    pointer-events: none;
-    mix-blend-mode: lighten;
-    background: rgba(0, 0, 0, 0.3);
-    /* Fondo para cuando la imagen es 'contain' */
-    opacity: 1;
-    cursor: default;
+.project-card__title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
 }
 
-/* Resplandor del Visor */
-.ar-visor::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, transparent 30%, rgba(34, 211, 238, 0.3) 100%);
-    box-shadow: inset 0 0 40px rgba(34, 211, 238, 0.6);
-    z-index: 5;
-    border-radius: 50px;
-    /* Para suavizar el resplandor */
+.project-card__description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.ar-visor__track {
+.project-card__image {
+    flex: 1.2;
     display: flex;
-    height: 100%;
-    width: 200%;
-    animation: arSlide 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 10;
 }
 
-.ar-visor__track img {
-    width: 50%;
-    height: 100%;
-    object-fit: contain;
-    /* Cambiado a contain para que la imagen no se vea 'gigante' */
-    padding: 15px;
-    /* Espaciado interno para que respire dentro del lente */
-    object-position: center;
-    filter: brightness(1.1) contrast(1.2);
+.project-card__image img {
+    transform: scale(1.4);
+    position: absolute;
+    bottom: -80px;
+    right: -60px;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.5));
+    transition: var(--transition);
+    image-rendering: -webkit-optimize-contrast;
+    /* Mejora contraste en escalado */
+    image-rendering: auto;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform-origin: center;
 }
 
-@keyframes arSlide {
-
-    0%,
-    20% {
-        transform: translateX(0);
-    }
-
-    45%,
-    65% {
-        transform: translateX(-50%);
-    }
-
-    90%,
-    100% {
-        transform: translateX(0);
-    }
+.project-card:hover .project-card__image img {
+    transform: scale(1.05) translateY(-10px);
 }
 
-/* 7. RESPONSIVIDAD */
 @media (max-width: 1024px) {
-    .hero {
+    .project-card {
+        flex-direction: column;
+        width: 100%;
         height: auto;
-        padding: 60px 0;
-    }
-
-    .hero__container {
-        grid-template-columns: 1fr;
+        padding: 40px 30px;
         text-align: center;
-        gap: 40px;
+        margin: 40px auto;
+        overflow: hidden;
+        /* Volvemos a ocultar en tablet/móvil si es necesario para evitar scroll */
     }
 
-    .hero__description {
-        margin-left: auto;
-        margin-right: auto;
+    .project-card__info {
+        max-width: 100%;
+        margin-bottom: 30px;
     }
 
-    .hero__tags {
+    .project-card__title {
+        font-size: 1.8rem;
+    }
+
+    .project-card__image {
+        width: 100%;
         justify-content: center;
     }
 
-    .hero__image-wrapper {
-        max-width: 400px;
-    }
-
-    .about__grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .about__content {
-        order: 1;
-    }
-
-    .ar-glasses {
-        order: 2;
-        max-width: 350px;
+    .project-card__image img {
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        right: 0;
+        transform: none;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .projects__header {
+        text-align: left;
+    }
+
+    .project-card {
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        border-radius: 20px;
+        text-align: left;
+        margin: 30px auto;
+    }
+
+    .project-card__title {
+        font-size: 1.5rem;
+    }
+
+    .project-card__description {
+        font-size: 1rem;
+    }
+}
+
+/* 7. RESPONSIVIDAD GENERAL */
+.hero__mobile-img {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0;
+    }
+}
+
+/* 8. ADAPTACIÓN MÓVIL */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 40px 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        background: var(--bg-color) !important;
+        padding: 0;
+        display: flex;
+        overflow: visible;
+        background-image: none !important;
+    }
+
+    /* Imagen superior sin ningún degradado */
+    .hero__mobile-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        z-index: 5;
+    }
+
+    /* Degradado para eliminar la luz azul y fundir con el fondo */
+    .hero__mobile-img::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        /* Ajusta la altura del fade según necesites */
+        background: linear-gradient(to bottom, transparent, var(--bg-color) 90%);
+        z-index: 6;
+        pointer-events: none;
+    }
+
+    .hero__mobile-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #matrix-canvas {
+        opacity: 0.1;
+        position: fixed;
+        z-index: 1;
+        /* Detrás de todo */
+    }
+
+    .hero__container {
+        padding: 30px 20px;
+        height: auto;
+        position: relative;
+        z-index: 10;
+        justify-content: flex-start;
+    }
+
+    .hero__content {
+        max-width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    /* Estilos del Logo (Oficial) */
+    .hero__logo-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+        /* Margen superior 32px */
+    }
+
+    .hero__logo {
+        height: 38px;
+        width: auto;
+    }
+
+    /* Tipografía Solicitada y Espaciado */
     .hero__title {
-        font-size: 2rem;
+        font-size: 20px !important;
+        line-height: 1.4;
+        font-weight: 700;
+        margin-bottom: 16px;
+        /* Margen entre título y descripción */
+        color: var(--white);
     }
 
     .hero__description {
-        font-size: 1.1rem;
+        font-size: 14px !important;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 32px;
+        /* Margen entre descripción y tags */
+        font-weight: 400;
+        max-width: 100%;
+    }
+
+    /* Tags como en la captura */
+    .hero__tags {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-bottom: 32px;
+        /* Margen entre tags y botón */
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .hero__tags::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tag {
+        flex: 0 0 auto;
+        background: #050714;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 12px !important;
+        padding: 10px 18px;
+        border-radius: 100px;
+        font-weight: 600;
+        box-shadow: none;
+        /* Sin luz azul */
+    }
+
+    /* Botón */
+    .hero__actions {
+        width: 100%;
     }
 
     .btn-primary {
         width: 100%;
+        height: 55px;
+        /* Igual que desktop */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--primary);
+        color: var(--white);
+        font-weight: bold;
+        font-size: 16px;
+        /* Igual que desktop */
+        box-shadow: 0px 4px 0px 0px #00227B;
+        /* Mismo estilo 3D */
+        transition: var(--transition);
+        transform: none;
+        /* Reset inicial */
+    }
+
+    .btn-primary:active {
+        transform: translateY(2px);
+        /* Efecto de presión real */
+        box-shadow: 0px 2px 0px 0px #00227B;
+    }
+
+    .btn-primary:hover {
+        background: #0C4CF3;
+        transform: translateY(-3px);
+        box-shadow: none;
+    }
+
+    /* Evitar saltos en los tags al presionar */
+    .tag:hover,
+    .tag:active {
+        transform: translateY(-2px);
+    }
+
+    /* Ajustes adicionales */
+    .tech-band {
+        padding: 25px 0;
+        margin-top: 50px;
+        /* Espacio extra opcional */
+    }
+
+    .hero__container {
+        padding: 30px 20px 60px 20px;
+        /* Aumentamos el padding inferior de 30px a 60px */
+        height: auto;
+        position: relative;
+        z-index: 10;
+        justify-content: flex-start;
+    }
+
+    .glass-card {
+        padding: 25px;
+        border-radius: 20px;
+    }
+}
+
+/* ==========================================================================
+   9. SECCIÓN PROYECTOS PERSONALES (MARQUEE PREMIUM)
+   ========================================================================== */
+.personal-projects {
+    padding: 80px 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(12, 76, 243, 0.03) 50%, transparent 100%);
+}
+
+.personal-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+}
+
+.personal-marquee:hover .personal-marquee__track {
+    animation-play-state: paused;
+}
+
+.personal-marquee__track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
+
+.personal-card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.personal-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.personal-card:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.personal-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.4) 60%, transparent 100%);
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Content left, button right */
+    align-items: flex-end; /* Bottom align so button is at the same height as icons */
+    padding: 30px 40px; /* Padding for the sides and bottom */
+    opacity: 0;
+    transition: var(--transition);
+    backdrop-filter: blur(0px);
+}
+
+.personal-card:hover .personal-card__overlay {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+}
+
+.personal-card__info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateX(-20px);
+    transition: var(--transition);
+    transition-delay: 0.1s;
+}
+
+.personal-card:hover .personal-card__info-box {
+    transform: translateX(0);
+}
+
+.personal-card__overlay h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+.personal-card__buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.btn-icon img {
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain !important;
+    transform: none !important;
+}
+
+.btn-icon:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px) scale(1.1);
+}
+
+.btn-ver-mas {
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px -5px rgba(12, 76, 243, 0.4);
+    transform: translateX(20px);
+    transition-delay: 0.2s;
+    white-space: nowrap;
+}
+
+.personal-card:hover .btn-ver-mas {
+    transform: translateX(0);
+}
+
+.btn-ver-mas:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 30px -10px rgba(12, 76, 243, 0.6);
+}
+
+/* Adaptación móvil para Proyectos Personales */
+@media (max-width: 480px) {
+    .personal-card {
+        width: 300px;
+        height: 180px;
+    }
+
+    .personal-card__overlay {
+        opacity: 1; /* Always visible on mobile */
+        padding: 0 20px;
+        background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, transparent 100%);
+    }
+
+    .personal-card__overlay h3 {
+        font-size: 1rem;
+        transform: none;
+    }
+
+    .btn-ver-mas {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        transform: none;
+    }
+}
+  transform: none;
     }
 }
