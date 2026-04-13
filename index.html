@@ -437,7 +437,35 @@
     </main>
 
     <script src="js/matrix.js"></script>
+    <script>
+        // Lógica para interacción en móvil: tocar tarjeta la activa, tocar otra vez la desactiva.
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.personal-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Si hacemos click en un botón/enlace dentro, no cerramos la tarjeta
+                    if (e.target.closest('.btn-icon, .btn-ver-mas')) return;
+                    
+                    const isActiva = card.classList.contains('is-active');
+                    
+                    // Desactivamos todas primero
+                    cards.forEach(c => c.classList.remove('is-active'));
+                    
+                    // Si no estaba activa, la activamos
+                    if (!isActiva) {
+                        card.classList.add('is-active');
+                    }
+                });
+            });
+
+            // Tocar afuera de cualquier tarjeta cancela el estado activo de todas
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.personal-card')) {
+                    cards.forEach(c => c.classList.remove('is-active'));
+                }
+            });
+        });
+    </script>
 </body>
-
-
 </html>

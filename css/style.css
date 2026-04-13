@@ -894,15 +894,36 @@ a {
         padding: 40px 0;
     }
 
+    /* Anulamos que el hover nativo pause la animación en móvil para que no se "trabe" */
+    .personal-marquee:hover .personal-marquee__track {
+        animation-play-state: running;
+    }
+
+    /* Solo pausamos cuando una tarjeta tiene la clase is-active activada por JS */
+    .personal-marquee:has(.personal-card.is-active) .personal-marquee__track {
+        animation-play-state: paused;
+    }
+
+    /* Anulamos el efecto del hover nativo en las tarjetas también, para dejarle control total a JS */
+    .personal-card:hover .personal-card__overlay {
+        opacity: 0;
+        backdrop-filter: none;
+    }
+    .personal-card:hover .personal-card__info-box {
+        transform: translateX(-20px);
+    }
+    .personal-card:hover .btn-ver-mas {
+        transform: translateX(20px);
+    }
+
     .personal-card {
         width: 280px;
         height: 200px;
-        /* Habilita el estado hover/active en iOS al tocar */
+        /* Habilita el estado active en iOS */
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
     }
 
-    /* Ocultamos por defecto igual que en desktop, ajustando padding para móvil */
     .personal-card__overlay {
         opacity: 0;
         padding: 20px;
@@ -910,7 +931,6 @@ a {
         align-items: flex-end;
     }
 
-    /* Restablecemos la posición inicial para la animación de entrada */
     .personal-card__info-box {
         transform: translateX(-20px);
         gap: 10px;
@@ -926,5 +946,16 @@ a {
         font-size: 0.75rem;
         transform: translateX(20px);
         box-shadow: 0 4px 10px rgba(12, 76, 243, 0.4);
+    }
+
+    /* Forzamos a que estos elementos se muestren SOLO con .is-active en móvil */
+    .personal-card.is-active .personal-card__overlay {
+        opacity: 1;
+        backdrop-filter: blur(8px);
+    }
+    
+    .personal-card.is-active .personal-card__info-box,
+    .personal-card.is-active .btn-ver-mas {
+        transform: none;
     }
 }
