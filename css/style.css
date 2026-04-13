@@ -296,6 +296,7 @@ a {
     width: 100%;
     background: #051139;
     padding: 24px 0;
+    margin-bottom: 80px;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
@@ -693,18 +694,32 @@ a {
 
     /* Ajustes adicionales */
     .tech-band {
-        padding: 25px 0;
-        margin-top: 50px;
-        /* Espacio extra opcional */
+        padding: 15px 0;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .tech-item {
+        padding: 0 20px;
+        font-size: 1rem;
+    }
+    
+    .tech-item img {
+        height: 24px;
     }
 
     .hero__container {
         padding: 30px 20px 60px 20px;
-        /* Aumentamos el padding inferior de 30px a 60px */
         height: auto;
         position: relative;
         z-index: 10;
         justify-content: flex-start;
+    }
+
+    .projects__subtitle {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-top: 10px;
     }
 
     .glass-card {
@@ -875,26 +890,41 @@ a {
 
 /* Adaptación móvil para Proyectos Personales */
 @media (max-width: 480px) {
-    .personal-card {
-        width: 300px;
-        height: 180px;
+    .personal-projects {
+        padding: 40px 0;
     }
 
+    .personal-card {
+        width: 280px;
+        height: 200px;
+        /* Habilita el estado hover/active en iOS al tocar */
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Ocultamos por defecto igual que en desktop, ajustando padding para móvil */
     .personal-card__overlay {
-        opacity: 1;
-        /* Always visible on mobile */
-        padding: 0 20px;
-        background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, transparent 100%);
+        opacity: 0;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.5) 40%, transparent 100%);
+        align-items: flex-end;
+    }
+
+    /* Restablecemos la posición inicial para la animación de entrada */
+    .personal-card__info-box {
+        transform: translateX(-20px);
+        gap: 10px;
     }
 
     .personal-card__overlay h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         transform: none;
     }
 
     .btn-ver-mas {
         padding: 8px 16px;
         font-size: 0.75rem;
-        transform: none;
+        transform: translateX(20px);
+        box-shadow: 0 4px 10px rgba(12, 76, 243, 0.4);
     }
 }
