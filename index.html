@@ -434,25 +434,55 @@
             </div>
         </section>
 
+        <!-- SECCIÓN EDUCACIÓN PSeInt (VIDEOS) -->
+        <section class="pseint-showcase container">
+            <div class="projects__header">
+                <h2 class="hero__title">
+                    Contenido Educativo: <span class="text-gradient">Lógica con PSeInt</span>
+                </h2>
+                <p class="projects__subtitle">
+                    En mi canal de YouTube comparto tutoriales detallados sobre lógica de programación,
+                    ayudando a estudiantes a dominar los fundamentos mediante ejercicios prácticos en PSeInt.
+                </p>
+            </div>
+
+            <div class="pseint-video-container">
+                <div class="electric-frame">
+                    <div class="electric-bolt top"></div>
+                    <div class="electric-bolt bottom"></div>
+                    <div class="electric-bolt left"></div>
+                    <div class="electric-bolt right"></div>
+                    <div class="iframe-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/gOkVFUo2xCo"
+                            title="PSeInt Tutorial - Matías Bazán" referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <script src="js/matrix.js"></script>
     <script src="js/cursor.js"></script>
+    <script src="js/video-system.js"></script>
     <script>
         // Lógica para interacción en móvil: tocar tarjeta la activa, tocar otra vez la desactiva.
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.personal-card');
-            
+
             cards.forEach(card => {
                 card.addEventListener('click', (e) => {
                     // Si hacemos click en un botón/enlace dentro, no cerramos la tarjeta
                     if (e.target.closest('.btn-icon, .btn-ver-mas')) return;
-                    
+
                     const isActiva = card.classList.contains('is-active');
-                    
+
                     // Desactivamos todas primero
                     cards.forEach(c => c.classList.remove('is-active'));
-                    
+
                     // Si no estaba activa, la activamos
                     if (!isActiva) {
                         card.classList.add('is-active');
@@ -469,4 +499,5 @@
         });
     </script>
 </body>
+
 </html>
