@@ -49,6 +49,33 @@ body {
     overflow-x: hidden;
 }
 
+/* Ocultar cursor nativo en desktop */
+@media (hover: hover) and (pointer: fine) {
+    body, a, button, .tag, .personal-card, .btn-icon {
+        cursor: none !important;
+    }
+}
+
+/* 2.5 CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border: 2px solid var(--bg-color);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -725,6 +752,59 @@ a {
     .glass-card {
         padding: 25px;
         border-radius: 20px;
+    }
+}
+
+/* ==========================================================================
+   10. CUSTOM CURSOR STYLES
+   ========================================================================== */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estado activo (hover) */
+.cursor-active {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(12, 76, 243, 0.1);
+    border-color: var(--primary-light);
+}
+
+.cursor-dot-active {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: var(--white);
+}
+
+/* No mostrar en móvil */
+@media (max-width: 1024px) {
+    .cursor-dot, .cursor-outline {
+        display: none;
     }
 }
 
